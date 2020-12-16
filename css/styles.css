@@ -149,6 +149,7 @@ body {
 
 #timeline .listing .job-type {
   text-transform: uppercase;
+  float: left;
   font-weight: 700;
   font-size: .75em;
   position: relative;
