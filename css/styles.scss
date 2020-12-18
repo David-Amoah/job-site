@@ -27,28 +27,21 @@ body {
     margin: 0 auto;
 }
 
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
-
-.clearfix:after {
-    clear: both;
-}
-
 .main-header {
     margin: 5em 0 3em 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .logo {
+    display: flex;
     .far {
         width: 75px;
-        float: left;
         font-size: 50px;
+        margin-right: -40px;
     }
     h1 {
-        float: left;
         margin: 0 0 0 1em;
         text-transform: uppercase;
         font-size: 1.35em;
@@ -56,12 +49,12 @@ body {
         color: $main;
         span {
             font-weight: 700;
+            color: $secondary;
         }
     }
 }
 
 .nav {
-    float: right;
     padding-top: 1.75em;
     a {
         color: $secondary;
@@ -102,107 +95,101 @@ body {
         padding: 1em;
         margin-bottom: 1em;
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         z-index: 1;
-        display: table;
         width: 96%;
-        img,
         .info,
         .job-type {
-            display: table-cell;
-            vertical-align: middle;
+            // vertical-align: middle;
             font-size: .9em;
             color: $secondary;
+            margin-left: 20px;
         }
         .image-wrapper {
             width: 60px;
-            img {
-                width: 60px;
-                display: block;
-                margin: 0 auto;
-                border-radius: .25em;
-            }
-        }
-        .info {
-            line-height: 1.25;
-            width: 640px;
-            padding-left: 25px;
-            .job-title {
-                font-weight: 700;
-                color: $main;
-                font-size: 1.5em;
-            }
-            .job-info {
-                color: $secondary;
-                display: block;
-                span {
-                    margin: 0 .75em;
-                }
-            }
-        }
-        .job-type {
-            text-transform: uppercase;
-            float: left;
-            font-weight: 700;
-            font-size: .75em;
-            position: relative;
-            white-space: nowrap;
-            padding-top: .6em;
-            width: 100%;
-            &:before {
-                content: " ";
-                background-color: $highlight-1;
-                width: 10px;
-                height: 10px;
-                border-radius: 100%;
-                position: absolute;
-                left: -20px;
-                top: 27px;
-            }
-        }
-        .full-time {
-            color: $highlight-1;
-            &:before {
-                background: $highlight-1;
-            }
-        }
-        .part-time {
-            color: $highlight-2;
-            &:before {
-                background: $highlight-2;
-            }
-        }
-        .freelance {
-            color: $highlight-3;
-            &:before {
-                background: $highlight-3;
-            }
-        }
-        .contract {
-            color: $highlight-4;
-            &:before {
-                background: $highlight-4;
-            }
-        }
-        transition: all .3s ease-in-out;
-        &:hover {
-            cursor: pointer;
-            box-shadow: 0px 2px 40px 0 rgba(0, 0, 0, 0.1);
         }
     }
-    .date {
-        display: inline-block;
-        padding: .6em 0;
-        width: 100px;
-        background: $white;
-        border: 1px solid $border;
-        border-radius: 3em;
+    .info {
+        line-height: 1.25;
+        width: 640px;
+        padding-left: 25px;
+        .job-title {
+            font-weight: 700;
+            color: $main;
+            font-size: 1.5em;
+            margin-left: 20px;
+        }
+        .job-info {
+            color: $secondary;
+            display: block;
+            span {
+                margin: 0 .55em;
+            }
+        }
+    }
+    .job-type {
+        text-transform: uppercase;
         font-weight: 700;
         font-size: .75em;
-        text-align: center;
-        z-index: 2;
         position: relative;
-        margin: 1em 0 2em 0;
+        white-space: nowrap;
+        padding-top: .6em;
+        width: 100%;
+        position: absolute;
+        left: 80%;
+        top: 10px;
+        &:before {
+            content: " ";
+            background-color: $highlight-1;
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            position: absolute;
+            left: -20px;
+            top: 13px;
+        }
     }
+    .full-time {
+        color: $highlight-1;
+        &:before {
+            background: $highlight-1;
+        }
+    }
+    .part-time {
+        color: $highlight-2;
+        &:before {
+            background: $highlight-2;
+        }
+    }
+    .freelance {
+        color: $highlight-3;
+        &:before {
+            background: $highlight-3;
+        }
+    }
+    .contract {
+        color: $highlight-4;
+        &:before {
+            background: $highlight-4;
+        }
+    }
+}
+
+.date {
+    display: inline-block;
+    padding: .6em 0;
+    width: 100px;
+    background: $white;
+    border: 1px solid $border;
+    border-radius: 3em;
+    font-weight: 700;
+    font-size: .75em;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    margin: 1em 0 2em 0;
 }
 
 .load-more {
@@ -221,6 +208,39 @@ body {
             color: $main;
         }
     }
+}
+
+.youtube {
+    padding: 40px;
+    background-image: url(../img/youtube.jpg);
+    background-size: cover;
+}
+
+.uber {
+    padding: 40px;
+    background-image: url(../img/uber.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.audiomack {
+    padding: 40px;
+    background-image: url(../img/audiomack.jpg);
+    background-size: cover;
+}
+
+.facebook {
+    padding: 40px;
+    background-image: url(../img/facebook.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.twitter {
+    padding: 40px;
+    background-image: url(../img/twitter.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 @media only screen and (max-width: 768px) {
@@ -249,7 +269,10 @@ body {
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
+    .main-header {
+        display: block;
+    }
     #timeline {
         .listing {
             .image-wrapper {
